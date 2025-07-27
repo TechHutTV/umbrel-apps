@@ -4,29 +4,37 @@ name: NetBird
 tagline: A fast and secure mesh VPN
 icon: https://raw.githubusercontent.com/netbirdio/netbird/main/dashboard/src/assets/logo-dark.svg
 category: Networking
-version: "0.26.4"
-port: 10000
+version: "0.51.2"
 description: >-
   NetBird is a fast and secure mesh VPN that allows you to connect your devices from anywhere.
   It is built on top of WireGuard® and uses a peer-to-peer architecture to create a flat network between your machines.
   This makes it easy to access your Umbrel from anywhere, without having to configure port forwarding or a traditional VPN.
 
-  To get started, you will need a NetBird account. You can sign up for a free account at https://app.netbird.io/.
+  To get started, you will need a NetBird account or a self-hosted instance. You can sign up for a free account at https://app.netbird.io/.
   Once you have an account, you will need to create a setup key. You can do this by going to the "Setup Keys" tab in the NetBird dashboard.
-  You will also need to provide the management URL, which you can find in the "Settings" tab of the NetBird dashboard.
 
 developer: NetBird
 website: https://netbird.io/
 repo: https://github.com/netbirdio/netbird
-support: https://github.com/netbirdio/netbird/discussions
+support: https://github.com/netbirdio/netbird
 gallery:
   - 1.png
   - 2.png
   - 3.png
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-apps/pull/1
+submitter: Brandon Hopkins
+submission: 
 releaseNotes: >-
-  This release adds support for the NetBird agent on Umbrel.
+  
+    [client] fix test by @pnmcosta in #4156
+    [misc] add forum post and update sign pipeline by @mlsmaycon in #4155
+    [management] fix index creation if exist on mysql by @pascal-fischer in #4150
+    [management] Add validate flow response by @mlsmaycon in #4172
+    [client, relay] The openConn function no longer blocks the relayAddress function call by @pappz in #4180
+    [client] Add --filter-by-connection-type flag to status command by @aliamerj in #4010
+    [client] Fix bind exclusion routes by @lixmal in #4154
+    [management] Fix group resource count mismatch in policy by @bcmmbaga in #4182
+    [server, relay] Fix/relay race disconnection by @pappz in #4174
+
 dependencies: []
 path: ""
 defaultUsername: ""
@@ -35,6 +43,7 @@ torOnly: false
 permissions:
   - "CAP_NET_ADMIN"
   - "SYS_ADMIN"
+  - "SYS_RESOURCE"
 options:
   - id: NETBIRD_SETUP_KEY
     name: NetBird Setup Key
@@ -43,6 +52,6 @@ options:
     required: true
   - id: NETBIRD_MANAGEMENT_URL
     name: NetBird Management URL
-    description: Your NetBird management URL. You can get this from the "Settings" tab in the NetBird dashboard.
+    description: Your NetBird management URL. Leave this blank if you don't have a self-hosted instance.
     type: string
     required: false
