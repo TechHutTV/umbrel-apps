@@ -1,0 +1,48 @@
+manifestVersion: 1
+id: netbird
+name: NetBird
+tagline: A fast and secure mesh VPN
+icon: https://raw.githubusercontent.com/netbirdio/netbird/main/dashboard/src/assets/logo-dark.svg
+category: Networking
+version: "0.26.4"
+port: 10000
+description: >-
+  NetBird is a fast and secure mesh VPN that allows you to connect your devices from anywhere.
+  It is built on top of WireGuard® and uses a peer-to-peer architecture to create a flat network between your machines.
+  This makes it easy to access your Umbrel from anywhere, without having to configure port forwarding or a traditional VPN.
+
+  To get started, you will need a NetBird account. You can sign up for a free account at https://app.netbird.io/.
+  Once you have an account, you will need to create a setup key. You can do this by going to the "Setup Keys" tab in the NetBird dashboard.
+  You will also need to provide the management URL, which you can find in the "Settings" tab of the NetBird dashboard.
+
+developer: NetBird
+website: https://netbird.io/
+repo: https://github.com/netbirdio/netbird
+support: https://github.com/netbirdio/netbird/discussions
+gallery:
+  - 1.png
+  - 2.png
+  - 3.png
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-apps/pull/1
+releaseNotes: >-
+  This release adds support for the NetBird agent on Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+torOnly: false
+permissions:
+  - "CAP_NET_ADMIN"
+  - "SYS_ADMIN"
+options:
+  - id: NETBIRD_SETUP_KEY
+    name: NetBird Setup Key
+    description: Your NetBird setup key. You can get this from the "Setup Keys" tab in the NetBird dashboard.
+    type: string
+    required: true
+  - id: NETBIRD_MANAGEMENT_URL
+    name: NetBird Management URL
+    description: Your NetBird management URL. You can get this from the "Settings" tab in the NetBird dashboard.
+    type: string
+    required: false
