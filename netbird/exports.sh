@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # This script exports the environment variables that are configured in the Umbrel UI.
 # These variables are then used by the docker-compose.yml file to configure the NetBird agent.
 
