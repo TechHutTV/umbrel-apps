@@ -1,0 +1,22 @@
+services:
+  app:
+    image: netbirdio/netbird:0.26.4
+    container_name: netbird
+    restart: unless-stopped
+    # The host network mode is required for the NetBird agent to manage the host's network interfaces.
+    network_mode: "host"
+    # These capabilities are required for the agent to create and manage the WireGuard interface.
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    volumes:
+      # This volume persists the agent's state, including its private key and configuration.
+      - ${APP_DATA_DIR}/data:/etc/netbird
+    environment:
+      # The setup key is passed from the umbrel-app.yml options.
+      - NB_SETUP_KEY=${NETBIRD_SETUP_KEY}
+      # The management URL is also passed from the umbrel-app.yml options.
+      # If the user leaves this blank, the agent will use the default NetBird cloud URL.
+      - NB_MANAGEMENT_URL=${NETBIRD_MANAGEMENT_URL}
+    # The 'up' command starts the NetBird agent.
+    command: up
