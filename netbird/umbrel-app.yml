@@ -17,23 +17,24 @@ developer: NetBird
 website: https://netbird.io/
 repo: https://github.com/netbirdio/netbird
 support: https://github.com/netbirdio/netbird
+port: ""
 gallery:
   - 1.png
   - 2.png
   - 3.png
 submitter: Brandon Hopkins
-submission: 
+submission: test
 releaseNotes: >-
   
-    [client] fix test by @pnmcosta in #4156
-    [misc] add forum post and update sign pipeline by @mlsmaycon in #4155
-    [management] fix index creation if exist on mysql by @pascal-fischer in #4150
-    [management] Add validate flow response by @mlsmaycon in #4172
-    [client, relay] The openConn function no longer blocks the relayAddress function call by @pappz in #4180
-    [client] Add --filter-by-connection-type flag to status command by @aliamerj in #4010
-    [client] Fix bind exclusion routes by @lixmal in #4154
-    [management] Fix group resource count mismatch in policy by @bcmmbaga in #4182
-    [server, relay] Fix/relay race disconnection by @pappz in #4174
+* [client] fix test by @pnmcosta in #4156
+* [misc] add forum post and update sign pipeline by @mlsmaycon in #4155
+* [management] fix index creation if exist on mysql by @pascal-fischer in #4150
+* [management] Add validate flow response by @mlsmaycon in #4172
+* [client, relay] The openConn function no longer blocks the relayAddress function call by @pappz in #4180
+* [client] Add --filter-by-connection-type flag to status command by @aliamerj in #4010
+* [client] Fix bind exclusion routes by @lixmal in #4154
+* [management] Fix group resource count mismatch in policy by @bcmmbaga in #4182
+* [server, relay] Fix/relay race disconnection by @pappz in #4174
 
 dependencies: []
 path: ""
