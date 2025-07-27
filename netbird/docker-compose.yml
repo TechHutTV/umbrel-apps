@@ -1,6 +1,6 @@
 services:
   app:
-    image: netbirdio/netbird
+    image: netbirdio/netbird:0.51.2@sha256:32e5306106387fd0e571101d99a7eefe9ff0de225f0dc3cfe90a85da3372840e
     container_name: netbird
     restart: unless-stopped
     # The host network mode is required for the NetBird agent to manage the host's network interfaces.
